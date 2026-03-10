@@ -54,19 +54,17 @@ public class GestorTareasUI extends JFrame {
         add(new JScrollPane(tabla), BorderLayout.CENTER);
         add(panelBotones, BorderLayout.SOUTH);
         
-        // Colorear encabezado
+        
         tabla.getTableHeader().setDefaultRenderer(new HeaderRenderer(new Color(70, 130, 180), Color.WHITE));
         
-        // Color de fondo de la ventana
         getContentPane().setBackground(new Color(245, 245, 245)); // gris claro
 
-        // Color de fondo del panel de botones
         panelBotones.setBackground(new Color(220, 220, 220)); // gris más oscuro
 
         panelBotones.setBorder(new EmptyBorder(10, 10, 10, 10)); // top, left, bottom, right
 
         
-        // Eventos
+        
         btnAgregar.addActionListener(e -> agregarTarea());
         btnEditar.addActionListener(e -> editarTarea());
         btnEliminar.addActionListener(e -> eliminarTarea());
@@ -94,7 +92,6 @@ public class GestorTareasUI extends JFrame {
             JOptionPane.QUESTION_MESSAGE, null, estados, estados[0]);
 
     if (titulo != null && estado != null) {
-        // --- AQUÍ VA EL BLOQUE DEL SPINNER DE FECHA ---
         SpinnerDateModel model = new SpinnerDateModel();
         JSpinner dateSpinner = new JSpinner(model);
         dateSpinner.setEditor(new JSpinner.DateEditor(dateSpinner, "yyyy-MM-dd"));
@@ -102,7 +99,6 @@ public class GestorTareasUI extends JFrame {
         if (option != JOptionPane.OK_OPTION) return;
         java.util.Date selectedDate = model.getDate();
         LocalDate fecha = selectedDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        // --- FIN BLOQUE DEL SPINNER DE FECHA ---
 
         try {
             TareaDAO.insertar(new Tarea(titulo, descripcion, estado, fecha));
