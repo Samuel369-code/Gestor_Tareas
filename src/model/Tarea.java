@@ -23,12 +23,12 @@ public class Tarea {
         this.fecha = fecha;
     }
 
-    // Constructor sin id (para insertar nuevas tareas)
+    
     public Tarea(String titulo, String descripcion, String estado, LocalDate fecha) {
         this(0, titulo, descripcion, estado, fecha);
     }
 
-    // Getters y setters
+    
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
