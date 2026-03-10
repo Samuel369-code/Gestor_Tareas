@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class Conexion {
     
     private static final String URL = "jdbc:postgresql://localhost:5432/gestor_tareas";
-    private static final String USER = "ioc";   // tu usuario de pgAdmin
-    private static final String PASS = "ioc"; // tu contraseña
+    private static final String USER = "";   
+    private static final String PASS = "";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASS);
