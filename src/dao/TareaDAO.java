@@ -60,7 +60,7 @@ public class TareaDAO {
         stmt.setString(1, tarea.getTitulo());
         stmt.setString(2, tarea.getDescripcion());
         stmt.setString(3, tarea.getEstado());
-        stmt.setDate(4, java.sql.Date.valueOf(tarea.getFecha())); // LocalDate -> java.sql.Date
+        stmt.setDate(4, java.sql.Date.valueOf(tarea.getFecha())); 
         stmt.setInt(5, tarea.getId());
         stmt.executeUpdate();
     }
