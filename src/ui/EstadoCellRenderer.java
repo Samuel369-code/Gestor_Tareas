@@ -20,7 +20,7 @@ public class EstadoCellRenderer extends DefaultTableCellRenderer {
                                                    int row, int column) {
         Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-        String estado = (String) table.getValueAt(row, 3); // columna del estado
+        String estado = (String) table.getValueAt(row, 3); 
         if ("Pendiente".equals(estado)) {
             c.setBackground(Color.YELLOW);
         } else if ("En Progreso".equals(estado)) {
