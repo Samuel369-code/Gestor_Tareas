@@ -14,7 +14,6 @@ public class Tarea {
     private String estado;
     private LocalDate fecha;
 
-    // Constructor completo
     public Tarea(int id, String titulo, String descripcion, String estado, LocalDate fecha) {
         this.id = id;
         this.titulo = titulo;
